@@ -26,16 +26,16 @@ namespace sultan
 
                     using (ConnectionDB db = new ConnectionDB())
                     {
-                        // создаем два объекта User
+                        // создаем объект Student
                         Student student = new Student(fullName, age, faculty, direction, course);
 
-                        // добавляем их в бд
+                        // добавляем в бд
                         db.Students.AddRange(student);
                         db.SaveChanges();
                     }
                     using (ConnectionDB db = new ConnectionDB())
                     {
-                        // получаем объекты из бд и выводим на консоль
+                        // получаем объекты из бд и выводим
                         var students = db.Students.ToList();
                         Console.WriteLine("Users list:");
                         foreach (Student student in students)
